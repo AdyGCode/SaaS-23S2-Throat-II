@@ -1,15 +1,37 @@
 # THROAT
 
-The Huge Resource of Original Acronyms and Terms
+The Huge Resource of Organised Acronymns and Terms
 
+*This in itself is a backcronym.*
+
+## About THROAT
+
+
+## Contributing
+
+TBA
+
+## Code of Conduct
+
+TBA
+
+## Security Vulnerabilities
+
+TBA
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Notes
 ## Dev Environment
 
 Presumptions:
 - Windows 10+
 - Laragon 6+ as the WAMP stack
-- PHP 8.2+ 
+- PHP 8.2+
 - MariaDB 10+ / MySQL 8+
-- 
+-
 
 
 ## Create new Laravel application
@@ -24,3 +46,117 @@ php -v
 ```shell
 composer -V
 ```
+create database and user
+
+db name: throat
+db user: throat
+db pass: acronym
+
+CREATE USER 'throat'@'localhost' IDENTIFIED VIA mysql_native_password USING 'acronym';
+GRANT USAGE ON *.* TO 'throat'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `throat`;
+GRANT ALL PRIVILEGES ON `throat`.* TO 'throat'@'localhost';
+
+
+create project
+
+composer create-project laravel/laravel throat
+
+cd throat
+
+edit .env
+
+change the db details to above.
+
+create word types migration, model, controller, seeder, factory, etc
+
+php artisan make:model WordType -as
+
+Output of command:
+```text
+INFO  Model [...\throat\app/Models/WordType.php] created successfully.
+INFO  Factory [...\throat\database/factories/WordTypeFactory.php] created successfully.
+INFO  Migration [...\throat\database\migrations/2023_07_26_011248_create_word_types_table.php] created successfully.
+INFO  Seeder [...\throat\database/seeders/WordTypeSeeder.php] created successfully.
+INFO  Request [...\throat\app/Http/Requests/StoreWordTypeRequest.php] created successfully.
+INFO  Request [...\throat\app/Http/Requests/UpdateWordTypeRequest.php] created successfully.
+INFO  Controller [...\throat\app/Http/Controllers/WordTypeController.php] created successfully.
+INFO  Policy [...\throat\app/Policies/WordTypePolicy.php] created successfully.
+```
+
+press SHIFT twice, start typing WordType and locate the migration (eg. 2023_07_26_0111248_create_word_types_table.php )
+
+Edit the migration to include
+
+id (pk)
+code (string, unique, 2 chars, not nullable)
+name (string, unique, 32 chars, not nullable)
+
+run migration using
+
+php artisan migrate --step
+
+this runs any new migrations, adding them to a step by step list in the databse. this allows rollback a step or more if needed.
+
+edit the WordType model and add the name and code to the fillables.
+
+
+open the seeder for word types (SHIFT SHIFT word, then find word type seeder)
+
+Add the seeder code
+
+edit the Database Seeder class and update
+
+
+run the seeder
+
+
+error?
+
+```text
+php artisan db:seed
+
+   INFO  Seeding database.
+
+  Database\Seeders\WordTypeSeeder .......................................................................................................... RUNNING
+
+   Error
+
+  Class "Database\Seeders\WordType" not found
+
+  at database\seeders\WordTypeSeeder.php:52
+     48▕
+     49▕         ];
+     50▕
+     51▕         foreach ($seedTypes as $seedType) {
+  ➜  52▕             WordType::create($seedType);
+     53▕         }
+     54▕
+     55▕     }
+     56▕ }
+
+  1   vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      Database\Seeders\WordTypeSeeder::run()
+
+  2   vendor\laravel\framework\src\Illuminate\Container\Util.php:41
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+```
+
+Need to Import the WordType model into the seeder.
+
+---
+
+exercise
+
+create the terms table (php artisan...)
+
+| field | ... | ... |
+|-------|--------|------|
+| term | string, 96 | required |
+| word type | str, 2 | required, default Other |
+| definition | text | required |
+| url | string, 255 | required |
+| added by | foreign key | from user table |
+
+update the model to include these fields
+
