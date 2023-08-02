@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('word_types', function (Blueprint $table) {
-            $table->id(); // id unsigned big integer, primary key, autoincrement
-            $table->string('code', 2)->unique(); // eg BA, IN, AC etc
+        Schema::create('ratings', function (Blueprint $table) {
+            $table->id(); // unsigned big integer autoincrement primary key
             $table->string('name',32)->unique();
-            $table->timestamps(); // created_at updated_at datetime
+            $table->unsignedTinyInteger('star')->default(0);
+            $table->timestamps(); // created_at and updated_at
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('word_types');
+        Schema::dropIfExists('ratings');
     }
 };
