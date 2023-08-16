@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
+Route::get('/ratings/{rating}', [RatingController::class, 'show'])->name('ratings.show');
+
+Route::get('/ratings/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
+Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
+
+Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+
+
+require __DIR__ . '/auth.php';
