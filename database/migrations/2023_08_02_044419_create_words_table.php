@@ -12,10 +12,9 @@ return new class extends Migration {
     {
         Schema::create('words', function (Blueprint $table) {
             $table->id();
-            $table->string('word', 64);
+            $table->string('word', 255);
             $table->text('definition');
-            // $table->string('word_type_code', 2)->nullable();
-            $table->unsignedBigInteger('word_type_id');
+            $table->foreignId('word_type_id');
             $table->timestamps();
         });
     }

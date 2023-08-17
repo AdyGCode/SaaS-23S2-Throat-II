@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Word;
 use App\Models\WordType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Symfony\Component\Console\Logger\ConsoleLogger;
-use function PHPUnit\Framework\isNull;
+use Illuminate\Support\Str;
 
 class WordSeeder extends Seeder
 {
@@ -22,35 +20,138 @@ class WordSeeder extends Seeder
                 'definition' => 'International Business Machines',
                 'word_type' => 'Initialism',
             ],
-                    [
+            
+            [
                 'word' => 'laser',
                 'definition' => 'Light Amplification by Stimulated Emission of Radiation',
                 'word_type' => 'Acronym',
             ],
 
-                    [
+            [
                 'word' => 'MoSCoW',
                 'definition' => "Must Have, Should Have, Could Have, Won't Have",
                 'word_type' => 'Acronym',
             ],
 
             [
-                'word'=>'THROAT',
-                'definition'=>"The Huge Resource Of Acronyms and Terms",
-                'word_type'=>'backronym',
+                'word' => 'THROAT',
+                'definition' => "The Huge Resource Of Acronyms and Terms",
+                'word_type' => 'Backronym',
             ],
+
+            [
+                'word' => 'CRUD',
+                'definition' => "Create, Retrieve, Update, Delete",
+                'word_type' => 'Acronym',
+            ],
+
+            [
+                'word' => 'KISS',
+                'definition' => "Keep It Simple, Stupid",
+                'word_type' => 'Acronym',
+            ],
+
+            [
+                'word' => 'PHP',
+                'definition' => "PHP Hypertext Preprocessor",
+                'word_type' => 'Name',
+            ],
+
+            [
+                'word' => 'imho',
+                'definition' => "In My Honest Opinion",
+                'word_type' => 'Textese',
+            ],
+
+            [
+                'word' => 'DRY',
+                'definition' => "Don't Repeat Yourself",
+                'word_type' => 'Acronym',
+            ],
+
+            [
+                'word' => 'inc.',
+                'definition' => "Incorporated",
+                'word_type' => 'Abbreviation',
+            ],
+
+            [
+                'word' => 'imo',
+                'definition' => "In My Opinion",
+                'word_type' => 'Textese',
+            ],
+
+            [
+                'word' => 'Silly Old Henry Carried a Horse To Our Abattoir',
+                'definition' => "Sin = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tan = Opposite/Adjacent",
+                'word_type' => 'Mnemonic',
+            ],
+
+            [
+                'word' => 'SQL',
+                'definition' => "Structured Query Language",
+                'word_type' => 'Initialism',
+            ],
+
+            [
+                'word' => 'btw',
+                'definition' => "By The Way",
+                'word_type' => 'Textese',
+            ],
+
+            [
+                'word' => "can't",
+                'definition' => "cannot",
+                'word_type' => 'Contraction',
+            ],
+
+            [
+                'word' => "Dr.",
+                'definition' => "Doctor",
+                'word_type' => 'Contraction',
+            ],
+
+
         ];
 
-        foreach ($seedWords as $seedWord) {
-            $wordType = WordType::whereName($seedWord['word_type'])->first();
+        /*
+         * Grab the word types table as a collection.
+         * This reduces the number of database calls made.
+         */
+        $wordTypes = WordType::all();
 
-            if(isNull($wordType)){
-                $this->command->line("Word type not found: {$seedWord['word_type']}",'error');
-            }else {
-                $seedWord['word_type_id'] = $wordType->id;
-                unset($seedWord['word_type']);
-                Word::create($seedWord);
+        /*
+         * Loop through each word in the seed list:
+         */
+        foreach ($seedWords as $seedWord) {
+            $wordType = $wordTypes->firstWhere('name', $seedWord['word_type']);
+
+            /*
+             * If the word type is not in the collection then we create the new word type
+             * with a random code made from the word type's name (currently not checking
+             * for duplicate codes/names), and retrieving the new collection of word types.
+             *
+             * This is still much faster than if we had individual SQL executions for each
+             * word type check.
+             */
+            if (is_null($wordType)) {
+                $wordType = WordType::create([
+                    'code' => Str::upper(Str::substr(str_shuffle($seedWord['word_type']), 0, 2)),
+                    'name' => $seedWord['word_type'],
+                ]);
+
+                $this->command->line("  Created new word type: {$wordType->code} {$wordType->name}", 'comment');
+                $wordTypes = WordType::all();
             }
+
+            $newWord = [
+                'word' => $seedWord['word'],
+                'definition' => $seedWord['definition'],
+                'word_type_id' => $wordType->id,
+            ];
+
+            Word::create($newWord);
+
         }
     }
 }
