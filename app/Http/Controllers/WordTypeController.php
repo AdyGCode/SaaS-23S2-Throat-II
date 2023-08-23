@@ -2,16 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\WordType;
+use App\Http\Requests\StoreWordTypeRequest;
+use App\Http\Requests\UpdateWordTypeRequest;
 
 class WordTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * todo: add a route to the word types index method
+     * todo: make the index method display the wordtypes.index view
+     * todo: create the wordtypes/index.blade.php file and
+     *       display the word types in a table
+     * todo: add pagination to the table & controller method to
+     *       show 5 word types at a time
      */
     public function index()
     {
-        //
+        $wordTypes = WordType::paginate(5);
+        return view('wordtypes.index',compact(['wordTypes']));
     }
 
     /**
@@ -25,23 +35,29 @@ class WordTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreWordTypeRequest $request)
     {
         //
     }
 
     /**
      * Display the specified resource.
+     *
+     * This is an example of Route-Model Binding
+     * The route will be:
+     * Route::get('/wordtypes/{wordType}',
+     *     [\App\Http\Controllers\WordTypeController::class, 'show']
+     * )->name('wordtypes.show');
      */
-    public function show(string $id)
+    public function show(WordType $wordType)
     {
-        //
+        return view('wordtypes.show', compact(['wordType']));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(WordType $wordType)
     {
         //
     }
@@ -49,7 +65,7 @@ class WordTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateWordTypeRequest $request, WordType $wordType)
     {
         //
     }
@@ -57,7 +73,7 @@ class WordTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(WordType $wordType)
     {
         //
     }

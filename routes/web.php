@@ -19,6 +19,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Routes for Ratings
+ * GET POST UPDATE DESTROY INFO
+ */
+Route::get('/ratings',
+    [\App\Http\Controllers\RatingController::class, 'index']
+)->name('ratings.index');
+
+// http(s)://domain.com/ratings/2
+Route::get('/ratings/{id}',
+    [\App\Http\Controllers\RatingController::class, 'show']
+)->name('ratings.show');
+
+/**
+ * Routes for Word Types
+ *
+ */
+Route::get('/wordtypes',
+    [\App\Http\Controllers\WordTypeController::class, 'index']
+)->name('wordtypes.index');
+
+Route::get('/wordtypes/{wordType}',
+    [\App\Http\Controllers\WordTypeController::class, 'show']
+)->name('wordtypes.show');
+
+
+/* --------------------------------------------- */
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

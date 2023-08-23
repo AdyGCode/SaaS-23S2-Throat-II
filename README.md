@@ -1,66 +1,162 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# THROAT
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The Huge Resource of Organised Acronymns and Terms
 
-## About Laravel
+*This in itself is a backcronym.*
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About THROAT
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+TBA
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+TBA
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+TBA
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Notes
+## Dev Environment
+
+Presumptions:
+- Windows 10+
+- Laragon 6+ as the WAMP stack
+- PHP 8.2+
+- MariaDB 10+ / MySQL 8+
+-
+
+
+## Create new Laravel application
+PC:
+- open the Laragon application
+- Start All
+- Open the Laragon terminal
+- ensure PHP and Composer installed and working:
+```shell
+php -v
+```
+```shell
+composer -V
+```
+create database and user
+
+db name: throat
+db user: throat
+db pass: acronym
+
+CREATE USER 'throat'@'localhost' IDENTIFIED VIA mysql_native_password USING 'acronym';
+GRANT USAGE ON *.* TO 'throat'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `throat`;
+GRANT ALL PRIVILEGES ON `throat`.* TO 'throat'@'localhost';
+
+
+create project
+
+composer create-project laravel/laravel throat
+
+cd throat
+
+edit .env
+
+change the db details to above.
+
+create word types migration, model, controller, seeder, factory, etc
+
+php artisan make:model WordType -as
+
+Output of command:
+```text
+INFO  Model [...\throat\app/Models/WordType.php] created successfully.
+INFO  Factory [...\throat\database/factories/WordTypeFactory.php] created successfully.
+INFO  Migration [...\throat\database\migrations/2023_07_26_011248_create_word_types_table.php] created successfully.
+INFO  Seeder [...\throat\database/seeders/WordTypeSeeder.php] created successfully.
+INFO  Request [...\throat\app/Http/Requests/StoreWordTypeRequest.php] created successfully.
+INFO  Request [...\throat\app/Http/Requests/UpdateWordTypeRequest.php] created successfully.
+INFO  Controller [...\throat\app/Http/Controllers/WordTypeController.php] created successfully.
+INFO  Policy [...\throat\app/Policies/WordTypePolicy.php] created successfully.
+```
+
+press SHIFT twice, start typing WordType and locate the migration (eg. 2023_07_26_0111248_create_word_types_table.php )
+
+Edit the migration to include
+
+id (pk)
+code (string, unique, 2 chars, not nullable)
+name (string, unique, 32 chars, not nullable)
+
+run migration using
+
+php artisan migrate --step
+
+this runs any new migrations, adding them to a step by step list in the databse. this allows rollback a step or more if needed.
+
+edit the WordType model and add the name and code to the fillables.
+
+
+open the seeder for word types (SHIFT SHIFT word, then find word type seeder)
+
+Add the seeder code
+
+edit the Database Seeder class and update
+
+
+run the seeder
+
+
+error?
+
+```text
+php artisan db:seed
+
+   INFO  Seeding database.
+
+  Database\Seeders\WordTypeSeeder .......................................................................................................... RUNNING
+
+   Error
+
+  Class "Database\Seeders\WordType" not found
+
+  at database\seeders\WordTypeSeeder.php:52
+     48▕
+     49▕         ];
+     50▕
+     51▕         foreach ($seedTypes as $seedType) {
+  ➜  52▕             WordType::create($seedType);
+     53▕         }
+     54▕
+     55▕     }
+     56▕ }
+
+  1   vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      Database\Seeders\WordTypeSeeder::run()
+
+  2   vendor\laravel\framework\src\Illuminate\Container\Util.php:41
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+```
+
+Need to Import the WordType model into the seeder.
+
+---
+
+exercise
+
+create the terms table (php artisan...)
+
+| field | ... | ... |
+|-------|--------|------|
+| term | string, 96 | required |
+| word type | str, 2 | required, default Other |
+| definition | text | required |
+| url | string, 255 | required |
+| added by | foreign key | from user table |
+
+update the model to include these fields
+

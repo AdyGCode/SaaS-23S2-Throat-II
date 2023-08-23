@@ -10,10 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('word_types', function (Blueprint $table) {
+        Schema::create('words', function (Blueprint $table) {
             $table->id();
-            $table->string('code', 2)->unique();
-            $table->string('name', 32)->unique();
+            $table->string('word', 255);
+            $table->text('definition');
+            $table->foreignId('word_type_id');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('word_types');
+        Schema::dropIfExists('words');
     }
 };
