@@ -9,7 +9,7 @@
     <section class="w-full p-6 flex flex-col gap-4">
         <h3 class="text-lg text-gray-800 dark:text-gray-200
                    font-bold">
-            {{ __('Edit') }}
+            {{ __('Add') }}
         </h3>
 
         @if($errors->any())
@@ -20,14 +20,13 @@
             </div>
         @endif
 
-
         <form
             method="POST"
-            action="{{ route('ratings.update', ['rating'=>$rating]) }}"
+            action="{{ route('ratings.store') }}"
             class="flex flex-col w-full gap-4">
 
             @csrf
-            @method('PATCH')
+            @method('POST')
 
             <div class="flex flex-row gap-4 rounded-md
                     bg-gray-200 dark:bg-gray-900">
@@ -43,7 +42,7 @@
                     name="name"
                     type="text"
                     class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md"
-                    value="{{ old('name') ?? $rating->name }}"/>
+                    value="{{ old('name') }}"/>
             </div>
 
             <div class="flex flex-row gap-4 rounded-md
@@ -58,18 +57,21 @@
                     id="Icon"
                     name="icon"
                     class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md">
-                    <option value="lemon" @if(old('icon')??$rating->icon=='lemon') selected @endif>Lemon</option>
-                    <option value="star" @if(old('icon')??$rating->icon=='star') selected @endif>Star</option>
-                    <option value="splotch" @if(old('icon')??$rating->icon=='splotch') selected @endif>Splotch</option>
-                    <option value="poo" @if(old('icon')??$rating->icon=='poo') selected @endif>Poo</option>
-                    <option value="cloud" @if(old('icon')??$rating->icon=='cloud') selected @endif>Cloud</option>
-                    <option value="ghost" @if(old('icon')??$rating->icon=='ghost') selected @endif>Ghost</option>
-                    <option value="thumbs-up" @if(old('icon')??$rating->icon=='thumbs-up') selected @endif>Thumbs Up
+                    <option value="lemon" @if(old('icon')? old('icon')=='lemon':false) selected @endif>Lemon</option>
+                    <option value="star" @if(old('icon')? old('icon') == 'star':false) selected @endif>Star</option>
+                    <option value="splotch" @if(old('icon')? old('icon') == 'splotch':false) selected @endif>Splotch
                     </option>
-                    <option value="thumbs-down" @if(old('icon')??$rating->icon=='thumbs-down') selected @endif>Thumbs
+                    <option value="poo" @if(old('icon')? old('icon') == 'poo':false) selected @endif>Poo</option>
+                    <option value="cloud" @if(old('icon')? old('icon') == 'cloud':false) selected @endif>Cloud</option>
+                    <option value="ghost" @if(old('icon')? old('icon') == 'ghost':false) selected @endif>Ghost</option>
+                    <option value="thumbs-up" @if(old('icon')? old('icon') == 'thumbs-up':false) selected @endif>Thumbs
+                        Up
+                    </option>
+                    <option value="thumbs-down" @if(old('icon')? old('icon') == 'thumbs-down':false) selected @endif>
+                        Thumbs
                         Down
                     </option>
-                    <option value="" @if(old('icon')??$rating->icon=='') selected @endif disabled>Select an icon
+                    <option value="" @if(old('icon')?old('icon')=='':false) selected @endif disabled>Select an icon
                     </option>
                 </select>
             </div>
@@ -87,7 +89,7 @@
                        id="Stars"
                        name="stars"
                        class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md"
-                       min="0" max="10" value="{{ old('stars') ?? $rating->stars }}">
+                       min="0" max="10" value="{{ old('stars') ?? 0 }}">
             </div>
 
             <div class="flex flex-row rounded-md">

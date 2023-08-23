@@ -9,28 +9,33 @@ use App\Http\Requests\UpdateRatingRequest;
 class RatingController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Rating Resource.
      */
     public function index()
     {
-        $ratings = Rating::all();
+//        $ratings = Rating::all();
+        $ratings = Rating::paginate(5);
         return view('ratings.index', compact(['ratings']));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Rating Resource.
      */
     public function create()
     {
-        //
+        return view('ratings.add');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Rating resource in storage.
      */
     public function store(StoreRatingRequest $request)
     {
-        //
+        $details = $request->validated();
+        $rating = Rating::create($details);
+        return redirect(route('ratings.index'))
+            ->with('created', $rating->name)
+            ->with('messages', true);
     }
 
     /**
@@ -59,16 +64,32 @@ class RatingController extends Controller
     public function update(UpdateRatingRequest $request, Rating $rating)
     {
         $id = $rating->id;
-        $newName = $request->name;
-        $newIcon = $request->icon;
-        $newStars = $request->stars;
-        $rating->update([
-            'name' => $newName,
-            'stars' => $newStars,
-            'icon' => $newIcon,
-        ]);
+        $validated = $request->validated();
+        $rating->update($validated);
 
-        return redirect(route('ratings.index'));
+//        $newName = $validated->name;
+//        $newIcon = $validated->icon;
+//        $newStars = $validated->stars;
+//        $newName = $validated->name;
+//        $newIcon = $validated->icon;
+//        $newStars = $validated->stars;
+//        $rating->update([
+//            'name' => $newName,
+//            'stars' => $newStars,
+//            'icon' => $newIcon,
+//        ]);
+
+        return redirect(route('ratings.index'))
+            ->with('updated', "{$rating->name}")
+            ->with('messageType', 'updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function delete(Rating $rating)
+    {
+        return view('ratings.delete', compact(['rating']));
     }
 
     /**
@@ -76,6 +97,8 @@ class RatingController extends Controller
      */
     public function destroy(Rating $rating)
     {
-        //
+        $oldRating = $rating;
+        $rating->delete();
+        return redirect(route('ratings.index'))->with('deleted', "{$oldRating->name}");
     }
 }

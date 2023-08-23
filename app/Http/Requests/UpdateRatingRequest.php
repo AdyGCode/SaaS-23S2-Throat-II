@@ -12,7 +12,7 @@ class UpdateRatingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-
+        // This will need to be changed to only allow logged in "admin" to use the update
         return true;
     }
 
@@ -24,10 +24,7 @@ class UpdateRatingRequest extends FormRequest
     public function rules(): array
     {
         /*
-         * id
-         * name
-         * stars
-         * icon
+         * id         * name         * stars         * icon
          */
         $ratingId = $this->route('rating');
         return [

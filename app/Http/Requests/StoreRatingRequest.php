@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreRatingRequest extends FormRequest
 {
@@ -11,7 +12,8 @@ class StoreRatingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        // This will need to be changed to only allow logged in "admin" to use the update
+        return true;
     }
 
     /**
@@ -21,8 +23,18 @@ class StoreRatingRequest extends FormRequest
      */
     public function rules(): array
     {
+        /*
+         * id         * name         * stars         * icon
+         */
         return [
-            //
+            'name' => [
+                'required',
+                Rule::unique('ratings', 'name'),
+                'min:2',
+                'max:32',
+            ],
+            'icon' => ['required', 'max:24',],
+            'stars' => ['required', 'min:0', 'max:10',]
         ];
     }
 }

@@ -29,12 +29,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// GET: Index, Add/Create
 Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
-Route::get('/ratings/{rating}', [RatingController::class, 'show'])->name('ratings.show');
+Route::get('/ratings/add', [RatingController::class, 'create'])->name('ratings.add');
+Route::get('/ratings/create', [RatingController::class, 'create'])->name('ratings.create');
 
+// GET: Show, Edit, Delete {all require an "ID", ie "rating"} - Delete is NON-standard
+Route::get('/ratings/{rating}', [RatingController::class, 'show'])->name('ratings.show');
 Route::get('/ratings/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
 Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
 
+// Action routes
+// POST: stores the rating
+// PATCH/PUT: update the rating details
+// DELETE: Destroys the rating
+Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
+Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
 Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
