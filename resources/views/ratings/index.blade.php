@@ -97,7 +97,7 @@
         </tbody>
         <tfoot>
         <tr>
-            <td colspan="4" class="p-2">
+            <td colspan="4" class="p-2 border-none">
                 {{ $ratings->links() }}
             </td>
         </tr>
