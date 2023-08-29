@@ -1,6 +1,6 @@
 # THROAT
 
-The Huge Resource of Organised Acronymns and Terms
+Terrifyingly Huge Resource of Organised Acronyms and Terminology
 
 *This in itself is a backcronym.*
 
@@ -31,7 +31,9 @@ Presumptions:
 - Laragon 6+ as the WAMP stack
 - PHP 8.2+
 - MariaDB 10+ / MySQL 8+
--
+- NodeJS 18+
+- Composer 2+
+- ...
 
 
 ## Create new Laravel application
