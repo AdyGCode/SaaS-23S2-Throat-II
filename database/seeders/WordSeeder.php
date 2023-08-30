@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Definition;
+use App\Models\User;
 use App\Models\Word;
 use App\Models\WordType;
 use Illuminate\Database\Seeder;
@@ -14,13 +16,15 @@ class WordSeeder extends Seeder
      */
     public function run(): void
     {
+        $user = User::findOrFail(1);
+
         $seedWords = [
             [
                 'word' => 'IBM',
                 'definition' => 'International Business Machines',
                 'word_type' => 'Initialism',
             ],
-            
+
             [
                 'word' => 'laser',
                 'definition' => 'Light Amplification by Stimulated Emission of Radiation',
@@ -144,13 +148,25 @@ class WordSeeder extends Seeder
                 $wordTypes = WordType::all();
             }
 
+            // Create the word if it does not exist
             $newWord = [
                 'word' => $seedWord['word'],
-                'definition' => $seedWord['definition'],
                 'word_type_id' => $wordType->id,
+                'user_id' => $user->id,
             ];
 
-            Word::create($newWord);
+            $word = Word::firstWhere('word', $seedWord['word']);
+            if (is_null($word)) {
+                $word = Word::create($newWord);
+            }
+
+            $seedDefinition = [
+                'definition' => $seedWord['definition'],
+                'user_id' => $user->id,
+            ];
+
+            $definition = Definition::create($seedDefinition);
+            $word->definitions()->save($definition);
 
         }
     }
