@@ -38,4 +38,14 @@ class Definition extends Model
         'published_at' => 'datetime',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function word()
+    {
+        return $this->belongsTo(Word::class);
+    }
+
 }
