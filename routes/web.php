@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 /**
  * Routes for Ratings
@@ -43,6 +43,11 @@ Route::get('/wordtypes',
 Route::get('/wordtypes/{wordType}',
     [\App\Http\Controllers\WordTypeController::class, 'show']
 )->name('wordtypes.show');
+
+
+Route::get('/words',
+    [\App\Http\Controllers\WordController::class, 'index']
+)->name('words.index');
 
 
 /* --------------------------------------------- */

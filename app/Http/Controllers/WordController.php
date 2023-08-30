@@ -13,7 +13,8 @@ class WordController extends Controller
      */
     public function index()
     {
-        //
+        $words = Word::with('definitions')->get();
+        return $words;
     }
 
     /**

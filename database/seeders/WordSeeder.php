@@ -19,6 +19,19 @@ class WordSeeder extends Seeder
         $user = User::findOrFail(1);
 
         $seedWords = [
+
+            [
+                'word' => 'FTP',
+                'definition' => 'File Transfer Protocol',
+                'word_type' => 'Initialism',
+            ],
+
+            [
+                'word' => 'FTP',
+                'definition' => 'Fast Track Program',
+                'word_type' => 'Acronym',
+            ],
+
             [
                 'word' => 'IBM',
                 'definition' => 'International Business Machines',
