@@ -76,7 +76,7 @@
                 <span class="sr-only">Back</span>
             </a>
 
-            <a href="{{ route('ratings.edit',['rating'=>$rating->id]) }}"
+            <a href="{{ route('ratings.edit','rating') }}"
                class="text-center p-2 grow
                           text-white
                           bg-orange-500 hover:bg-orange-900
@@ -86,7 +86,7 @@
                 <span class="sr-only">Edit</span>
             </a>
 
-            <a href="{{ route('ratings.delete',['rating'=>$rating->id]) }}"
+            <a href="{{ route('ratings.delete','rating') }}"
                class="text-center p-2 grow rounded-r-md
                           text-white
                           bg-red-500 hover:bg-red-900
