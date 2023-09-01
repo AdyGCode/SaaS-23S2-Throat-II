@@ -56,8 +56,9 @@
                 <td class="p-2">{{ $loop->index + 1 }}</td>
                 <td class="p-2">{{ $rating->name }}</td>
                 <td class="p-2">
-                    @for($count=1; $count <= $rating->stars / 2; $count++)
-                        <i class="fa fa-{{ $rating->icon }}"></i>
+                    <i class="fa {{ $rating->icon }} {{ $rating->colour }}"></i>
+                    @for($count=2; $count <= $rating->stars / 2; $count++)
+                        <i class="fa {{ $rating->icon }} {{ $rating->colour }}"></i>
                     @endfor
                      ({{ $rating->stars / 2 }})
                 </td>

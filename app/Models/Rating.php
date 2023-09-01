@@ -18,6 +18,7 @@ class Rating extends Model
         'name',
         'stars',
         'icon',
+        'colour',
     ];
 
     /**
