@@ -47,5 +47,4 @@ class Definition extends Model
     {
         return $this->belongsTo(Word::class);
     }
-
 }

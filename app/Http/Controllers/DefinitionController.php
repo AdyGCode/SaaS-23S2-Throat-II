@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Definition;
 use App\Http\Requests\StoreDefinitionRequest;
 use App\Http\Requests\UpdateDefinitionRequest;
+use App\Models\Definition;
 
 class DefinitionController extends Controller
 {

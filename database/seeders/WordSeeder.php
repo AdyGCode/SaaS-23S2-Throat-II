@@ -52,31 +52,31 @@ class WordSeeder extends Seeder
 
             [
                 'word' => 'THROAT',
-                'definition' => "The Huge Resource Of Acronyms and Terms",
+                'definition' => 'The Huge Resource Of Acronyms and Terms',
                 'word_type' => 'Backronym',
             ],
 
             [
                 'word' => 'CRUD',
-                'definition' => "Create, Retrieve, Update, Delete",
+                'definition' => 'Create, Retrieve, Update, Delete',
                 'word_type' => 'Acronym',
             ],
 
             [
                 'word' => 'KISS',
-                'definition' => "Keep It Simple, Stupid",
+                'definition' => 'Keep It Simple, Stupid',
                 'word_type' => 'Acronym',
             ],
 
             [
                 'word' => 'PHP',
-                'definition' => "PHP Hypertext Preprocessor",
+                'definition' => 'PHP Hypertext Preprocessor',
                 'word_type' => 'Name',
             ],
 
             [
                 'word' => 'imho',
-                'definition' => "In My Honest Opinion",
+                'definition' => 'In My Honest Opinion',
                 'word_type' => 'Textese',
             ],
 
@@ -88,46 +88,45 @@ class WordSeeder extends Seeder
 
             [
                 'word' => 'inc.',
-                'definition' => "Incorporated",
+                'definition' => 'Incorporated',
                 'word_type' => 'Abbreviation',
             ],
 
             [
                 'word' => 'imo',
-                'definition' => "In My Opinion",
+                'definition' => 'In My Opinion',
                 'word_type' => 'Textese',
             ],
 
             [
                 'word' => 'Silly Old Henry Carried a Horse To Our Abattoir',
-                'definition' => "Sin = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tan = Opposite/Adjacent",
+                'definition' => 'Sin = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tan = Opposite/Adjacent',
                 'word_type' => 'Mnemonic',
             ],
 
             [
                 'word' => 'SQL',
-                'definition' => "Structured Query Language",
+                'definition' => 'Structured Query Language',
                 'word_type' => 'Initialism',
             ],
 
             [
                 'word' => 'btw',
-                'definition' => "By The Way",
+                'definition' => 'By The Way',
                 'word_type' => 'Textese',
             ],
 
             [
                 'word' => "can't",
-                'definition' => "cannot",
+                'definition' => 'cannot',
                 'word_type' => 'Contraction',
             ],
 
             [
-                'word' => "Dr.",
-                'definition' => "Doctor",
+                'word' => 'Dr.',
+                'definition' => 'Doctor',
                 'word_type' => 'Contraction',
             ],
-
 
         ];
 

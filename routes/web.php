@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +34,6 @@ Route::get('/ratings/{id}',
 
 /**
  * Routes for Word Types
- *
  */
 Route::get('/wordtypes',
     [\App\Http\Controllers\WordTypeController::class, 'index']
@@ -44,11 +43,9 @@ Route::get('/wordtypes/{wordType}',
     [\App\Http\Controllers\WordTypeController::class, 'show']
 )->name('wordtypes.show');
 
-
 Route::get('/words',
     [\App\Http\Controllers\WordController::class, 'index']
 )->name('words.index');
-
 
 /* --------------------------------------------- */
 
@@ -80,6 +77,5 @@ Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store
 Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
 Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
-
 
 require __DIR__ . '/auth.php';

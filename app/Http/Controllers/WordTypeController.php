@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WordType;
 use App\Http\Requests\StoreWordTypeRequest;
 use App\Http\Requests\UpdateWordTypeRequest;
+use App\Models\WordType;
 
 class WordTypeController extends Controller
 {
@@ -21,7 +21,8 @@ class WordTypeController extends Controller
     public function index()
     {
         $wordTypes = WordType::paginate(5);
-        return view('wordtypes.index',compact(['wordTypes']));
+
+        return view('wordtypes.index', compact(['wordTypes']));
     }
 
     /**

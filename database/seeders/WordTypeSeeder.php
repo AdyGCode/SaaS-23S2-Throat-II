@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\WordType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class WordTypeSeeder extends Seeder

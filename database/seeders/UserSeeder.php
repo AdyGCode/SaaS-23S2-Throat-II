@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $seedUsers = [
             [
                 'name' => 'Ad Ministrator',
-                'email' => "ad.ministrator@example.com",
+                'email' => 'ad.ministrator@example.com',
                 'password' => 'Password1',
                 'roles' => ['admin', 'member', 'staff'],
             ],
@@ -30,13 +30,13 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Annie Wun',
-                'email' => "annie.wun@example.com",
+                'email' => 'annie.wun@example.com',
                 'password' => 'Password1',
                 'roles' => ['member'],
             ],
             [
                 'name' => 'Andy Mann',
-                'email' => "andy.mann@example.com",
+                'email' => 'andy.mann@example.com',
                 'password' => 'Password1',
                 'roles' => ['staff', 'member'],
             ],
@@ -50,14 +50,14 @@ class UserSeeder extends Seeder
                 'password' => $newUser['password'],
             ]);
 
-//            foreach ($newUser['roles'] as $role) {
-//                $newRole = Role::whereName($role)->first();
-//                if (!is_null($newRole)) {
-//                    $permissions = Permission::pluck('id', 'id')->all();
-//                    $newRole->syncPermissions($permissions);
-//                    $user->assignRole([$newRole->id]);
-//                }
-//            }
+            //            foreach ($newUser['roles'] as $role) {
+            //                $newRole = Role::whereName($role)->first();
+            //                if (!is_null($newRole)) {
+            //                    $permissions = Permission::pluck('id', 'id')->all();
+            //                    $newRole->syncPermissions($permissions);
+            //                    $user->assignRole([$newRole->id]);
+            //                }
+            //            }
         }
 
     }

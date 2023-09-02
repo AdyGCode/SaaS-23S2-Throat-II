@@ -33,8 +33,8 @@ class StoreRatingRequest extends FormRequest
                 'min:2',
                 'max:32',
             ],
-            'icon' => ['required', 'max:24',],
-            'stars' => ['required', 'min:0', 'max:10',]
+            'icon' => ['required', 'max:24'],
+            'stars' => ['required', 'min:0', 'max:10'],
         ];
     }
 }

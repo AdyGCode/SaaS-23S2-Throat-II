@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Word;
 use App\Http\Requests\StoreWordRequest;
 use App\Http\Requests\UpdateWordRequest;
+use App\Models\Word;
 
 class WordController extends Controller
 {
@@ -14,6 +14,7 @@ class WordController extends Controller
     public function index()
     {
         $words = Word::with('definitions')->get();
+
         return $words;
     }
 

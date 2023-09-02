@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rating;
 use App\Http\Requests\StoreRatingRequest;
 use App\Http\Requests\UpdateRatingRequest;
+use App\Models\Rating;
 
 class RatingController extends Controller
 {
@@ -13,8 +13,9 @@ class RatingController extends Controller
      */
     public function index()
     {
-//        $ratings = Rating::all();
+        //        $ratings = Rating::all();
         $ratings = Rating::paginate(5);
+
         return view('ratings.index', compact(['ratings']));
     }
 
@@ -33,6 +34,7 @@ class RatingController extends Controller
     {
         $details = $request->validated();
         $rating = Rating::create($details);
+
         return redirect(route('ratings.index'))
             ->with('created', $rating->name)
             ->with('messages', true);
@@ -67,17 +69,17 @@ class RatingController extends Controller
         $validated = $request->validated();
         $rating->update($validated);
 
-//        $newName = $validated->name;
-//        $newIcon = $validated->icon;
-//        $newStars = $validated->stars;
-//        $newName = $validated->name;
-//        $newIcon = $validated->icon;
-//        $newStars = $validated->stars;
-//        $rating->update([
-//            'name' => $newName,
-//            'stars' => $newStars,
-//            'icon' => $newIcon,
-//        ]);
+        //        $newName = $validated->name;
+        //        $newIcon = $validated->icon;
+        //        $newStars = $validated->stars;
+        //        $newName = $validated->name;
+        //        $newIcon = $validated->icon;
+        //        $newStars = $validated->stars;
+        //        $rating->update([
+        //            'name' => $newName,
+        //            'stars' => $newStars,
+        //            'icon' => $newIcon,
+        //        ]);
 
         return redirect(route('ratings.index'))
             ->with('updated', "{$rating->name}")
@@ -99,6 +101,7 @@ class RatingController extends Controller
     {
         $oldRating = $rating;
         $rating->delete();
+
         return redirect(route('ratings.index'))->with('deleted', "{$oldRating->name}");
     }
 }

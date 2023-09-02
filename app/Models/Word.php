@@ -9,7 +9,6 @@ class Word extends Model
 {
     use HasFactory;
 
-
     /**
      * The attributes that are mass assignable.
      *
@@ -46,5 +45,4 @@ class Word extends Model
     {
         return $this->hasMany(Definition::class);
     }
-
 }

@@ -43,16 +43,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-
     public function definitions()
     {
         return $this->hasMany(Definition::class);
     }
 
-
     public function words()
     {
         return $this->hasMany(Word::class);
     }
-
 }
