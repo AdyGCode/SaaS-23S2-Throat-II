@@ -172,7 +172,7 @@ class WordSeeder extends Seeder
                     'name' => $seedWord['word_type'],
                 ]);
 
-                $this->command->line("  Created new word type: {$wordType->code} {$wordType->name}", 'comment');
+                $this->command->line("  - Created new word type: {$wordType->code} {$wordType->name}", 'comment');
                 $wordTypes = WordType::all();
             }
 
