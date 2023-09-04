@@ -80,9 +80,8 @@ Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->name('
 Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
-
-Route::get('/force-styles', function (){
+Route::get('/force-styles', function () {
     return view('force-styles');
 });

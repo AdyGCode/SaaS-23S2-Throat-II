@@ -36,10 +36,10 @@ class Word extends Model
     protected $casts = [
     ];
 
-//    public function wordType()
-//    {
-//        return $this->belongsTo(WordType::class);
-//    }
+    //    public function wordType()
+    //    {
+    //        return $this->belongsTo(WordType::class);
+    //    }
 
     public function definitions()
     {

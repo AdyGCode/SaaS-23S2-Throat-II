@@ -161,7 +161,7 @@ class WordSeeder extends Seeder
                     $secondLetter = 1;
                     while ($codeExists && $secondLetter < $swLength) {
                         $codeLetters = Str::substr($seedWordType, $firstLetter, 1).Str::substr($seedWordType, $secondLetter, 1);
-                        $codeExists = WordType::where("code", "=", $codeLetters)->get()->count() ?? false;
+                        $codeExists = WordType::where('code', '=', $codeLetters)->get()->count() ?? false;
                         $secondLetter++;
                     }
                     $firstLetter++;
@@ -179,7 +179,7 @@ class WordSeeder extends Seeder
             // Create the word if it does not exist
             $newWord = [
                 'word' => $seedWord['word'],
-//                'word_type_id' => $wordType->id,
+                //                'word_type_id' => $wordType->id,
                 'user_id' => $user->id,
             ];
 
