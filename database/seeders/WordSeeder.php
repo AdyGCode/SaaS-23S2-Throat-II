@@ -29,7 +29,7 @@ class WordSeeder extends Seeder
             [
                 'word' => 'FTP',
                 'definition' => 'Fast Track Program',
-                'word_type' => 'Acronym',
+                'word_type' => 'Initialism',
             ],
 
             [
@@ -163,7 +163,7 @@ class WordSeeder extends Seeder
             // Create the word if it does not exist
             $newWord = [
                 'word' => $seedWord['word'],
-                'word_type_id' => $wordType->id,
+//                'word_type_id' => $wordType->id,
                 'user_id' => $user->id,
             ];
 
@@ -174,6 +174,7 @@ class WordSeeder extends Seeder
 
             $seedDefinition = [
                 'definition' => $seedWord['definition'],
+                'word_type_id' => $wordType->id,
                 'user_id' => $user->id,
             ];
 

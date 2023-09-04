@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('word', 255);
             // $table->text('definition'); // Moved into Definitions model
-            $table->foreignId('word_type_id');
+            $table->foreignId('word_type_id')->nullable(); // optional, as definition will have
             $table->foreignId('user_id');
             $table->timestamps();
 

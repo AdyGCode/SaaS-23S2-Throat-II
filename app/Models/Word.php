@@ -17,7 +17,7 @@ class Word extends Model
     protected $fillable = [
         'word',
         //'definition',
-        'word_type_id',
+        //'word_type_id',
     ];
 
     /**
@@ -36,10 +36,10 @@ class Word extends Model
     protected $casts = [
     ];
 
-    public function wordType()
-    {
-        return $this->belongsTo(WordType::class);
-    }
+//    public function wordType()
+//    {
+//        return $this->belongsTo(WordType::class);
+//    }
 
     public function definitions()
     {

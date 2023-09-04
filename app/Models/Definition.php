@@ -16,6 +16,7 @@ class Definition extends Model
      */
     protected $fillable = [
         'word_id',
+        'word_type_id',
         'definition',
         'user_id',
         'appropriate',
@@ -46,5 +47,10 @@ class Definition extends Model
     public function word()
     {
         return $this->belongsTo(Word::class);
+    }
+
+    public function wordType()
+    {
+        return $this->belongsTo(WordType::class);
     }
 }
