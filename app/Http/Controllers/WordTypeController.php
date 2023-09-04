@@ -46,9 +46,8 @@ class WordTypeController extends Controller
      *
      * This is an example of Route-Model Binding
      * The route will be:
-     * Route::get('/wordtypes/{wordType}',
-     *     [\App\Http\Controllers\WordTypeController::class, 'show']
-     * )->name('wordtypes.show');
+     * Route::get('/wordtypes/{wordType}', [\App\Http\Controllers\WordTypeController::class, 'show'])
+     *           ->name('wordtypes.show');
      */
     public function show(WordType $wordType)
     {

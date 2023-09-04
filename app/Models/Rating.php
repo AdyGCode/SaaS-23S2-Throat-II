@@ -36,4 +36,9 @@ class Rating extends Model
      */
     protected $casts = [
     ];
+
+    public function icon()
+    {
+        return "fa-solid fa-$this->icon";
+    }
 }

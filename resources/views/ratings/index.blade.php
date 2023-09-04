@@ -41,54 +41,54 @@
         </div>
     @endif
 
-    <table class="table bg-gray-100 rounded-lg  w-full text-gray-900 dark:text-gray-200">
-        <thead>
-        <tr>
-            <th>Row</th>
-            <th>Name</th>
-            <th>Stars</th>
-            <th>Actions</th>
+    <table class="table-auto rounded-lg w-full bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow">
+        <thead class="rounded-t-lg border-gray-300 border-b text-left">
+        <tr class="">
+            <th class="p-2 ">Row</th>
+            <th class="p-2 ">Name</th>
+            <th class="p-2 ">Stars</th>
+            <th class="p-2 w-1/6">Actions</th>
         </tr>
         </thead>
         <tbody>
         @foreach($ratings as $rating)
-            <tr>
+            <tr class="odd:bg-gray-50 even:bg-gray-200">
                 <td class="p-2">{{ $loop->index + 1 }}</td>
                 <td class="p-2">{{ $rating->name }}</td>
                 <td class="p-2">
-                    <i class="fa {{ $rating->icon }} {{ $rating->colour }}"></i>
+                    <i class="{{ $rating->icon() }} {{ $rating->colour }}"></i>
                     @for($count=2; $count <= $rating->stars / 2; $count++)
-                        <i class="fa {{ $rating->icon }} {{ $rating->colour }}"></i>
+                        <i class="{{ $rating->icon() }} {{ $rating->colour }}"></i>
                     @endfor
                      ({{ $rating->stars / 2 }})
                 </td>
-                <td class="p-2">
+                <td class="p-2 grid grid-cols-3 gap-2">
                     <a href="{{ route('ratings.show',['rating'=>$rating->id]) }}"
-                       class="text-center p-2 grow
-                          text-white rounded-l-md
+                       class="text-center p-2
+                          text-white rounded-md
                           bg-green-500 hover:bg-green-900
                           dark:bg-green-800 dark:hover:bg-green-500
-                          transition ease-in-out duration-350">
+                          transition ease-in-out duration-300">
                         <i class="fa fa-eye"></i>
                         <span class="sr-only">Show</span>
                     </a>
 
                     <a href="{{ route('ratings.edit',['rating'=>$rating->id]) }}"
-                       class="text-center p-2 grow
-                          text-white
+                       class="text-center p-2
+                          text-white rounded-md
                           bg-orange-500 hover:bg-orange-900
                           dark:bg-orange-800 dark:hover:bg-orange-500
-                          transition ease-in-out duration-350">
+                          transition ease-in-out duration-300">
                         <i class="fa fa-edit"></i>
                         <span class="sr-only">Edit</span>
                     </a>
 
                     <a href="{{ route('ratings.delete',['rating'=>$rating->id]) }}"
-                       class="text-center p-2 grow rounded-r-md
+                       class="text-center p-2 grow rounded-md
                           text-white
-                          bg-red-500 hover:bg-red-900
+                          bg-red-500 hover:bg-red-800
                           dark:bg-red-800 dark:hover:bg-red-500
-                          transition ease-in-out duration-350">
+                          transition ease-in-out duration-300">
                         <i class="fa fa-times"></i>
                         <span class="sr-only">Delete</span>
                     </a>
@@ -96,9 +96,9 @@
             </tr>
         @endforeach
         </tbody>
-        <tfoot>
+        <tfoot class="text-gray-400 border-gray-300 border-t text-left">
         <tr>
-            <td colspan="4" class="p-2 border-none">
+            <td colspan="4" class="p-2 rounded-b-lg bg-gray-300">
                 {{ $ratings->links() }}
             </td>
         </tr>

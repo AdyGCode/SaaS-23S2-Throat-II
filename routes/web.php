@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\WordController;
+use App\Http\Controllers\WordTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,27 +26,27 @@ Route::get('/', function () {
  * GET POST UPDATE DESTROY INFO
  */
 Route::get('/ratings',
-    [\App\Http\Controllers\RatingController::class, 'index']
+    [RatingController::class, 'index']
 )->name('ratings.index');
 
 // http(s)://domain.com/ratings/2
 Route::get('/ratings/{id}',
-    [\App\Http\Controllers\RatingController::class, 'show']
+    [RatingController::class, 'show']
 )->name('ratings.show');
 
 /**
  * Routes for Word Types
  */
 Route::get('/wordtypes',
-    [\App\Http\Controllers\WordTypeController::class, 'index']
+    [WordTypeController::class, 'index']
 )->name('wordtypes.index');
 
 Route::get('/wordtypes/{wordType}',
-    [\App\Http\Controllers\WordTypeController::class, 'show']
+    [WordTypeController::class, 'show']
 )->name('wordtypes.show');
 
 Route::get('/words',
-    [\App\Http\Controllers\WordController::class, 'index']
+    [WordController::class, 'index']
 )->name('words.index');
 
 /* --------------------------------------------- */
@@ -79,3 +81,8 @@ Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ra
 Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
 require __DIR__ . '/auth.php';
+
+
+Route::get('/force-styles', function (){
+    return view('force-styles');
+});

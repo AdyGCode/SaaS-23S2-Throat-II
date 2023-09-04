@@ -29,11 +29,11 @@
             @csrf
             @method('PATCH')
 
-            <div class="flex flex-row gap-4 rounded-md
-                    bg-gray-200 dark:bg-gray-900">
+            <div class="flex flex-row">
+
                 <label
                     for="Name"
-                    class="p-2 w-1/6 rounded-l-md
+                    class="p-2 w-1/6 rounded-l-lg
                       bg-gray-500 dark:bg-gray-800
                       text-gray-100">
                     {{ __("Name") }}
@@ -42,14 +42,14 @@
                     id="Name"
                     name="name"
                     type="text"
-                    class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md"
+                    class="p-2 w-5/6 border-gray-500 rounded-r-lg"
                     value="{{ old('name') ?? $rating->name }}"/>
             </div>
 
-            <div class="flex flex-row gap-4 rounded-md
-                    bg-gray-200 dark:bg-gray-900">
+            <div class="flex flex-row rounded-lg">
+
                 <label for="Icon"
-                       class="p-2 w-1/6 rounded-l-md
+                       class="p-2 w-1/6 rounded-l-lg
                       bg-gray-500 dark:bg-gray-800
                       text-gray-100">
                     {{ __('Icon') }}
@@ -57,7 +57,7 @@
                 <select
                     id="Icon"
                     name="icon"
-                    class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md">
+                    class="form-select p-2 w-5/6  border-gray-500 rounded-r-lg">
                     <option value="lemon" @if(old('icon')??$rating->icon=='lemon') selected @endif>Lemon</option>
                     <option value="star" @if(old('icon')??$rating->icon=='star') selected @endif>Star</option>
                     <option value="splotch" @if(old('icon')??$rating->icon=='splotch') selected @endif>Splotch</option>
@@ -74,11 +74,10 @@
                 </select>
             </div>
 
-            <div class="flex flex-row gap-4 rounded-md
-                    bg-gray-200 dark:bg-gray-900">
+            <div class="flex flex-row  rounded-lg">
                 <label
                     for=Stars"
-                    class="p-2 w-1/6 rounded-l-md
+                    class="p-2 w-1/6 rounded-l-lg
                       bg-gray-500 dark:bg-gray-800
                       text-gray-100">
                     {{__('Stars')}}
@@ -86,14 +85,14 @@
                 <input type="range"
                        id="Stars"
                        name="stars"
-                       class="p-2 w-5/6 bg-gray-200 dark:bg-gray-900 rounded-r-md"
+                       class="ml-2 p-2 w-5/6  rounded-r-lg "
                        min="0" max="10" value="{{ old('stars') ?? $rating->stars }}">
             </div>
 
-            <div class="flex flex-row rounded-md">
-
+            <div class="grid grid-cols-6 gap-4">
+                <div></div>
                 <a href="{{ route('ratings.index') }}"
-                   class="text-center p-2 grow rounded-l-md
+                   class="text-center p-2 grow rounded-lg
                           text-white
                           bg-sky-500 hover:bg-sky-900
                           dark:bg-sky-800 dark:hover:bg-sky-500
@@ -105,7 +104,7 @@
                 <button
                     type="submit"
                     class="text-center p-2 grow
-                       text-white rounded-r-md
+                       text-white rounded-lg
                        bg-orange-500 hover:bg-orange-900
                        dark:bg-orange-800 dark:hover:bg-orange-500
                        transition ease-in-out duration-350">

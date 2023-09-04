@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\WordType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\WordType>
+ * @extends Factory<WordType>
  */
 class WordTypeFactory extends Factory
 {

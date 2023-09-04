@@ -85,7 +85,7 @@ INFO  Controller [...\throat\app/Http/Controllers/WordTypeController.php] create
 INFO  Policy [...\throat\app/Policies/WordTypePolicy.php] created successfully.
 ```
 
-press SHIFT twice, start typing WordType and locate the migration (eg. 2023_07_26_0111248_create_word_types_table.php )
+press SHIFT twice, start typing WordType and locate the migration (e.g. 2023_07_26_0111248_create_word_types_table.php )
 
 Edit the migration to include
 
@@ -97,12 +97,12 @@ run migration using
 
 php artisan migrate --step
 
-this runs any new migrations, adding them to a step by step list in the databse. this allows rollback a step or more if needed.
+this runs any new migrations, adding them to a step-by-step list in the databse. this allows rollback a step or more if
+needed.
 
 edit the WordType model and add the name and code to the fillables.
 
-
-open the seeder for word types (SHIFT SHIFT word, then find word type seeder)
+open the seeder for word types (Use `SHIFT`-`SHIFT` word, then find word type seeder)
 
 Add the seeder code
 
