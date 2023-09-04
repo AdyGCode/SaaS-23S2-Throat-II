@@ -151,8 +151,24 @@ class WordSeeder extends Seeder
              * word type check.
              */
             if (is_null($wordType)) {
+                $seedWordType = $seedWord['word_type'];
+                $swLength = Str::length($seedWordType);
+                $codeExists = true;
+                $codeLetters = Str::substr($seedWordType, 0, 2);
+                $firstLetter = 0;
+                $secondLetter = 0;
+                while ($codeExists && $firstLetter < ($swLength - 1)) {
+                    $secondLetter = 1;
+                    while ($codeExists && $secondLetter < $swLength) {
+                        $codeLetters = Str::substr($seedWordType, $firstLetter, 1).Str::substr($seedWordType, $secondLetter, 1);
+                        $codeExists = WordType::where("code", "=", $codeLetters)->get()->count() ?? false;
+                        $secondLetter++;
+                    }
+                    $firstLetter++;
+                }
+
                 $wordType = WordType::create([
-                    'code' => Str::upper(Str::substr(str_shuffle($seedWord['word_type']), 0, 2)),
+                    'code' => Str::upper($codeLetters),
                     'name' => $seedWord['word_type'],
                 ]);
 
