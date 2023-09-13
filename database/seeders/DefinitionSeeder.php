@@ -11,6 +11,6 @@ class DefinitionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $this->command->line("  - Definitions seeded by the Word seeder", 'info');
     }
 }

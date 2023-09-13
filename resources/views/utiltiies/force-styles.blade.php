@@ -1,13 +1,14 @@
-<p class="text-slate-950">slate-950</p>
-<p class="text-slate-900">slate-900</p>
-<p class="text-slate-800">slate-800</p>
-<p class="text-slate-700">slate-700</p>
-<p class="text-slate-600">slate-600</p>
-<p class="text-slate-500">slate-500</p>
-<p class="text-slate-400">slate-400</p>
-<p class="text-slate-300">slate-300</p>
-<p class="text-slate-200">slate-200</p>
-<p class="text-slate-100">slate-100</p>
+<div>
+    <p class="text-slate-950">slate-950</p>
+    <p class="text-slate-900">slate-900</p>
+    <p class="text-slate-800">slate-800</p>
+    <p class="text-slate-700">slate-700</p>
+    <p class="text-slate-600">slate-600</p>
+    <p class="text-slate-500">slate-500</p>
+    <p class="text-slate-400">slate-400</p>
+    <p class="text-slate-300">slate-300</p>
+    <p class="text-slate-200">slate-200</p>
+    <p class="text-slate-100">slate-100</p>
 <p class="text-slate-50">slate-50</p>
 <p class="dark:text-slate-950">slate-950</p>
 <p class="dark:text-slate-900">slate-900</p>
@@ -21,7 +22,7 @@
 <p class="dark:text-slate-100">slate-100</p>
 <p class="dark:text-slate-50">slate-50</p>
 
-<p class="text-gray-950">gray-950</p>
+    <p class="text-gray-950">gray-950</p>
 <p class="text-gray-900">gray-900</p>
 <p class="text-gray-800">gray-800</p>
 <p class="text-gray-700">gray-700</p>
@@ -44,7 +45,7 @@
 <p class="dark:text-gray-100">gray-100</p>
 <p class="dark:text-gray-50">gray-50</p>
 
-<p class="text-neutral-950">neutral-950</p>
+    <p class="text-neutral-950">neutral-950</p>
 <p class="text-neutral-900">neutral-900</p>
 <p class="text-neutral-800">neutral-800</p>
 <p class="text-neutral-700">neutral-700</p>
@@ -67,7 +68,7 @@
 <p class="dark:text-neutral-100">neutral-100</p>
 <p class="dark:text-neutral-50">neutral-50</p>
 
-<p class="text-stone-950">stone-950</p>
+    <p class="text-stone-950">stone-950</p>
 <p class="text-stone-900">stone-900</p>
 <p class="text-stone-800">stone-800</p>
 <p class="text-stone-700">stone-700</p>
@@ -90,7 +91,7 @@
 <p class="dark:text-stone-100">stone-100</p>
 <p class="dark:text-stone-50">stone-50</p>
 
-<p class="text-red-950">red-950</p>
+    <p class="text-red-950">red-950</p>
 <p class="text-red-900">red-900</p>
 <p class="text-red-800">red-800</p>
 <p class="text-red-700">red-700</p>
@@ -113,7 +114,7 @@
 <p class="dark:text-red-100">red-100</p>
 <p class="dark:text-red-50">red-50</p>
 
-<p class="text-orange-950">orange-950</p>
+    <p class="text-orange-950">orange-950</p>
 <p class="text-orange-900">orange-900</p>
 <p class="text-orange-800">orange-800</p>
 <p class="text-orange-700">orange-700</p>
@@ -136,7 +137,7 @@
 <p class="dark:text-orange-100">orange-100</p>
 <p class="dark:text-orange-50">orange-50</p>
 
-<p class="text-amber-950">amber-950</p>
+    <p class="text-amber-950">amber-950</p>
 <p class="text-amber-900">amber-900</p>
 <p class="text-amber-800">amber-800</p>
 <p class="text-amber-700">amber-700</p>
@@ -159,7 +160,7 @@
 <p class="dark:text-amber-100">amber-100</p>
 <p class="dark:text-amber-50">amber-50</p>
 
-<p class="text-yellow-950">yellow-950</p>
+    <p class="text-yellow-950">yellow-950</p>
 <p class="text-yellow-900">yellow-900</p>
 <p class="text-yellow-800">yellow-800</p>
 <p class="text-yellow-700">yellow-700</p>
@@ -182,7 +183,7 @@
 <p class="dark:text-yellow-100">yellow-100</p>
 <p class="dark:text-yellow-50">yellow-50</p>
 
-<p class="text-lime-950">lime-950</p>
+    <p class="text-lime-950">lime-950</p>
 <p class="text-lime-900">lime-900</p>
 <p class="text-lime-800">lime-800</p>
 <p class="text-lime-700">lime-700</p>
@@ -205,7 +206,7 @@
 <p class="dark:text-lime-100">lime-100</p>
 <p class="dark:text-lime-50">lime-50</p>
 
-<p class="text-green-950">green-950</p>
+    <p class="text-green-950">green-950</p>
 <p class="text-green-900">green-900</p>
 <p class="text-green-800">green-800</p>
 <p class="text-green-700">green-700</p>
@@ -228,7 +229,7 @@
 <p class="dark:text-green-100">green-100</p>
 <p class="dark:text-green-50">green-50</p>
 
-<p class="text-emerald-950">emerald-950</p>
+    <p class="text-emerald-950">emerald-950</p>
 <p class="text-emerald-900">emerald-900</p>
 <p class="text-emerald-800">emerald-800</p>
 <p class="text-emerald-700">emerald-700</p>
@@ -251,7 +252,7 @@
 <p class="dark:text-emerald-100">emerald-100</p>
 <p class="dark:text-emerald-50">emerald-50</p>
 
-<p class="text-teal-950">teal-950</p>
+    <p class="text-teal-950">teal-950</p>
 <p class="text-teal-900">teal-900</p>
 <p class="text-teal-800">teal-800</p>
 <p class="text-teal-700">teal-700</p>
@@ -274,7 +275,7 @@
 <p class="dark:text-teal-100">teal-100</p>
 <p class="dark:text-teal-50">teal-50</p>
 
-<p class="text-cyan-950">cyan-950</p>
+    <p class="text-cyan-950">cyan-950</p>
 <p class="text-cyan-900">cyan-900</p>
 <p class="text-cyan-800">cyan-800</p>
 <p class="text-cyan-700">cyan-700</p>
@@ -297,7 +298,7 @@
 <p class="dark:text-cyan-100">cyan-100</p>
 <p class="dark:text-cyan-50">cyan-50</p>
 
-<p class="text-sky-950">sky-950</p>
+    <p class="text-sky-950">sky-950</p>
 <p class="text-sky-900">sky-900</p>
 <p class="text-sky-800">sky-800</p>
 <p class="text-sky-700">sky-700</p>
@@ -320,7 +321,7 @@
 <p class="dark:text-sky-100">sky-100</p>
 <p class="dark:text-sky-50">sky-50</p>
 
-<p class="text-blue-950">blue-950</p>
+    <p class="text-blue-950">blue-950</p>
 <p class="text-blue-900">blue-900</p>
 <p class="text-blue-800">blue-800</p>
 <p class="text-blue-700">blue-700</p>
@@ -343,7 +344,7 @@
 <p class="dark:text-blue-100">blue-100</p>
 <p class="dark:text-blue-50">blue-50</p>
 
-<p class="text-indigo-950">indigo-950</p>
+    <p class="text-indigo-950">indigo-950</p>
 <p class="text-indigo-900">indigo-900</p>
 <p class="text-indigo-800">indigo-800</p>
 <p class="text-indigo-700">indigo-700</p>
@@ -366,7 +367,7 @@
 <p class="dark:text-indigo-100">indigo-100</p>
 <p class="dark:text-indigo-50">indigo-50</p>
 
-<p class="text-violet-950">violet-950</p>
+    <p class="text-violet-950">violet-950</p>
 <p class="text-violet-900">violet-900</p>
 <p class="text-violet-800">violet-800</p>
 <p class="text-violet-700">violet-700</p>
@@ -389,7 +390,7 @@
 <p class="dark:text-violet-100">violet-100</p>
 <p class="dark:text-violet-50">violet-50</p>
 
-<p class="text-purple-950">purple-950</p>
+    <p class="text-purple-950">purple-950</p>
 <p class="text-purple-900">purple-900</p>
 <p class="text-purple-800">purple-800</p>
 <p class="text-purple-700">purple-700</p>
@@ -412,7 +413,7 @@
 <p class="dark:text-purple-100">purple-100</p>
 <p class="dark:text-purple-50">purple-50</p>
 
-<p class="text-fuchsia-950">fuchsia-950</p>
+    <p class="text-fuchsia-950">fuchsia-950</p>
 <p class="text-fuchsia-900">fuchsia-900</p>
 <p class="text-fuchsia-800">fuchsia-800</p>
 <p class="text-fuchsia-700">fuchsia-700</p>
@@ -435,7 +436,7 @@
 <p class="dark:text-fuchsia-100">fuchsia-100</p>
 <p class="dark:text-fuchsia-50">fuchsia-50</p>
 
-<p class="text-pink-950">pink-950</p>
+    <p class="text-pink-950">pink-950</p>
 <p class="text-pink-900">pink-900</p>
 <p class="text-pink-800">pink-800</p>
 <p class="text-pink-700">pink-700</p>
@@ -458,7 +459,7 @@
 <p class="dark:text-pink-100">pink-100</p>
 <p class="dark:text-pink-50">pink-50</p>
 
-<p class="text-rose-950">rose-950</p>
+    <p class="text-rose-950">rose-950</p>
 <p class="text-rose-900">rose-900</p>
 <p class="text-rose-800">rose-800</p>
 <p class="text-rose-700">rose-700</p>
@@ -481,7 +482,7 @@
 <p class="dark:text-rose-100">rose-100</p>
 <p class="dark:text-rose-50">rose-50</p>
 
-<p class="text-brown-950">brown-950</p>
+    <p class="text-brown-950">brown-950</p>
 <p class="text-brown-900">brown-900</p>
 <p class="text-brown-800">brown-800</p>
 <p class="text-brown-700">brown-700</p>
@@ -504,7 +505,7 @@
 <p class="dark:text-brown-100">brown-100</p>
 <p class="dark:text-brown-50">brown-50</p>
 
-<p class="text-waikawa-950">waikawa-950</p>
+    <p class="text-waikawa-950">waikawa-950</p>
 <p class="text-waikawa-900">waikawa-900</p>
 <p class="text-waikawa-800">waikawa-800</p>
 <p class="text-waikawa-700">waikawa-700</p>
@@ -527,7 +528,7 @@
 <p class="dark:text-waikawa-100">waikawa-100</p>
 <p class="dark:text-waikawa-50">waikawa-50</p>
 
-<p class="text-wedgewood-950">wedgewood-950</p>
+    <p class="text-wedgewood-950">wedgewood-950</p>
 <p class="text-wedgewood-900">wedgewood-900</p>
 <p class="text-wedgewood-800">wedgewood-800</p>
 <p class="text-wedgewood-700">wedgewood-700</p>
@@ -550,7 +551,7 @@
 <p class="dark:text-wedgewood-100">wedgewood-100</p>
 <p class="dark:text-wedgewood-50">wedgewood-50</p>
 
-<p class="text-azure-950">azure-950</p>
+    <p class="text-azure-950">azure-950</p>
 <p class="text-azure-900">azure-900</p>
 <p class="text-azure-800">azure-800</p>
 <p class="text-azure-700">azure-700</p>
@@ -573,7 +574,7 @@
 <p class="dark:text-azure-100">azure-100</p>
 <p class="dark:text-azure-50">azure-50</p>
 
-<p class="text-nutmeg-950">nutmeg-950</p>
+    <p class="text-nutmeg-950">nutmeg-950</p>
 <p class="text-nutmeg-900">nutmeg-900</p>
 <p class="text-nutmeg-800">nutmeg-800</p>
 <p class="text-nutmeg-700">nutmeg-700</p>
@@ -596,7 +597,7 @@
 <p class="dark:text-nutmeg-100">nutmeg-100</p>
 <p class="dark:text-nutmeg-50">nutmeg-50</p>
 
-<p class="text-capecod-950">capecod-950</p>
+    <p class="text-capecod-950">capecod-950</p>
 <p class="text-capecod-900">capecod-900</p>
 <p class="text-capecod-800">capecod-800</p>
 <p class="text-capecod-700">capecod-700</p>
@@ -619,7 +620,7 @@
 <p class="dark:text-capecod-100">capecod-100</p>
 <p class="dark:text-capecod-50">capecod-50</p>
 
-<p class="text-cucumber-950">cucumber-950</p>
+    <p class="text-cucumber-950">cucumber-950</p>
 <p class="text-cucumber-900">cucumber-900</p>
 <p class="text-cucumber-800">cucumber-800</p>
 <p class="text-cucumber-700">cucumber-700</p>
@@ -643,7 +644,7 @@
 <p class="dark:text-cucumber-50">cucumber-50</p>
 
 
-<p class="text-#-950"></p>
+    <p class="text-#-950"></p>
 <p class="text-#-900"></p>
 <p class="text-#-800"></p>
 <p class="text-#-700"></p>
@@ -658,18 +659,18 @@
 <p class="dark:text-#-900"></p>
 <p class="dark:text-#-800"></p>
 <p class="dark:text-#-700"></p>
-<p class="dark:text-#-600"></p>
-<p class="dark:text-#-500"></p>
-<p class="dark:text-#-400"></p>
-<p class="dark:text-#-300"></p>
-<p class="dark:text-#-200"></p>
-<p class="dark:text-#-100"></p>
-<p class="dark:text-#-50"></p>
+    <p class="dark:text-#-600"></p>
+    <p class="dark:text-#-500"></p>
+    <p class="dark:text-#-400"></p>
+    <p class="dark:text-#-300"></p>
+    <p class="dark:text-#-200"></p>
+    <p class="dark:text-#-100"></p>
+    <p class="dark:text-#-50"></p>
 
 
-<i class="fa fa-solid fa-ghost"></i>
-<i class="fa fa-solid fa-ghost"></i>
-<i class="fa fa-solid fa-ghost"></i>
-<i class="fa fa-solid fa-ghost"></i>
-<i class="fa fa-solid fa-ghost"></i>
+    <i class="fa fa-solid fa-ghost"></i>
+    <i class="fa fa-solid fa-pepper-hot"></i>
+    <i class="fa fa-solid fa-star"></i>
+    <i class="fa fa-solid fa-poo"></i>
+    <i class="fa fa-solid fa-lemon"></i>
 </div>

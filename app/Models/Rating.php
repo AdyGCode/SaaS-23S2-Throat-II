@@ -41,4 +41,6 @@ class Rating extends Model
     {
         return "fa-solid fa-$this->icon";
     }
+
+
 }

@@ -22,19 +22,6 @@ Route::get('/', function () {
 })->name('home');
 
 /**
- * Routes for Ratings
- * GET POST UPDATE DESTROY INFO
- */
-Route::get('/ratings',
-    [RatingController::class, 'index']
-)->name('ratings.index');
-
-// http(s)://domain.com/ratings/2
-Route::get('/ratings/{id}',
-    [RatingController::class, 'show']
-)->name('ratings.show');
-
-/**
  * Routes for Word Types
  */
 Route::get('/wordtypes',
@@ -61,24 +48,38 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+/**
+ * Routes for Ratings
+ * GET POST UPDATE DESTROY INFO
+ */
+
 // GET: Index, Add/Create
-Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
-Route::get('/ratings/add', [RatingController::class, 'create'])->name('ratings.add');
-Route::get('/ratings/create', [RatingController::class, 'create'])->name('ratings.create');
+//Route::get('/ratings', [RatingController::class, 'index'])->name('ratings.index');
+//Route::get('/ratings/add', [RatingController::class, 'create'])->name('ratings.add');
+//Route::get('/ratings/create', [RatingController::class, 'create'])->name('ratings.create');
 
 // GET: Show, Edit, Delete {all require an "ID", ie "rating"} - Delete is NON-standard
-Route::get('/ratings/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
-Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
-Route::get('/ratings/{rating}', [RatingController::class, 'show'])->name('ratings.show');
+//Route::get('/ratings/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
+//Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
+//Route::get('/ratings/{rating}', [RatingController::class, 'show'])->name('ratings.show');
 
 // Action routes
 // POST: stores the rating
 // PATCH/PUT: update the rating details
 // DELETE: Destroys the rating
-Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
-Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
-Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
-Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+//Route::post('/ratings', [RatingController::class, 'store'])->name('ratings.store');
+//Route::delete('/ratings/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
+//Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+//Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+
+
+Route::resource('ratings', RatingController::class)->only(['index', 'show']);
+Route::middleware('auth')->group(function () {
+    Route::resource('ratings', RatingController::class)->except(['index', 'show']);
+    Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
+});
+
 
 require __DIR__.'/auth.php';
 

@@ -166,29 +166,66 @@ update the model to include these fields
 
 If your THROAT repo is public, ensure you change it to be a PRIVATE repository.
 
-- Reason: you will be submitting this small application aspart of your portfolio of work.
-
-### Laravel Exercise Steps
-
-- Ensure the Model, Migration and Seeders for the following Models are created and function as expected:
-    - User
-    - Word Type
-    - Definition
-    - Word
-    - Rating
-- Make sure you have the user seeder from Adrian's GitHub Repo.
-    - https://github.com/AdyGCode/SaaS-23S2-Throat-II/blob/main/database/seeders/UserSeeder.php
-- Create the VIEWS for the Word model
-    - Create: Make sure you have a place to insert the definition for the word
-    - Update: do not have any way to edit the word definitions
-    - Destroy: ensure you check if the user wants to remove the word
-    - Index: Show all the words and a count of the number of definitions
-    - Show: Show the word, and a list of the definitions (only the first 15 words for each definition)
-    -
-- Create the ROUTES for the Word views
-- Create the WordController METHODS
+- Reason: you will be submitting this small application as part of your portfolio of work.
 
 ### MongoDB University
 
 The submission point for the MongoDB University proof of completion has been added to the Assessments Area.
 
+### Laravel Exercise Steps Part I
+
+With each of these exercises make sure you COMMIT and PUSH your code to your PRIVATE repository.
+
+- a ⌨ means you should commit at this stage.
+
+
+- Ensure the Model, Migration and Seeders for the following Models are created and function as expected:
+    - User <-- GOTCHA! already part of the Laravel installation!
+    - Word Type
+    - Definition
+    - Word
+    - Rating
+- Add the following Pivot Model & Migration
+    - definition-rating
+        - foreign id (definition id)
+        - foreign id (rating id)
+        - foreign id (user id)
+        - rating value
+    - artisan make:model DefinitionRating --migration
+- ⌨
+- Make sure you have the user seeder from Adrian's GitHub Repo.
+    - https://github.com/AdyGCode/SaaS-23S2-Throat-II/blob/main/database/seeders/UserSeeder.php
+- ⌨
+- Create the VIEWS for the Word model
+    - Create: Make sure you have a place to insert the definition for the word
+    - Update: Do not have any way to edit the word definitions
+    - Destroy: Ensure you check if the user wants to remove the word
+    - Index: Show all the words and a count of the number of definitions eg. BBQ Initialism 7
+    - Show: Show the word, and a list of the definitions (only the first 15 words for each definition)
+- ⌨
+- Create the ROUTES for the Word views
+- Create the WordController METHODS
+- TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+- ⌨
+- Create the Views for the Definition
+- Create the ROUTEs for the Definition
+- Create the Controller methods for the DefinitionController
+- Add the relationship for Definition -- Word:
+    - a definition belongs to one word
+- TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+- ⌨
+- Ensure all Models have their relationships defined as needed
+- ⌨
+
+### Laravel Exercise Steps Part II
+
+- Ensure you have completed Part I
+- Add authentication to your solution (login/logout/register)
+- ⌨
+- Modify the navigation template to prevent any "authenticated data" being accessed (eg the logged-in username)
+- ⌨
+- Add protection for the user's added definitions, so they are only editable by the user who wrote them
+- ⌨
+-
+- ..
+- ⌨

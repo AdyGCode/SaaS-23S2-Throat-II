@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             RatingSeeder::class,
             WordTypeSeeder::class,
             WordSeeder::class,
+            DefinitionSeeder::class,
         ]);
     }
 }

@@ -45,4 +45,10 @@ class Word extends Model
     {
         return $this->hasMany(Definition::class);
     }
+
+    public function definitionCount()
+    {
+        return $this->defintions()->count();
+    }
+
 }
