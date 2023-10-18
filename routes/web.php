@@ -73,11 +73,18 @@ Route::middleware('auth')->group(function () {
 //Route::patch('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 //Route::put('/ratings/{rating}', [RatingController::class, 'update'])->name('ratings.update');
 
-
+// Not authenticated access
 Route::resource('ratings', RatingController::class)->only(['index', 'show']);
+//Route::resource('wordtypes', WordTypeController::class)->only(['index', 'show']);
+
+
+// Must be authenticated
 Route::middleware('auth')->group(function () {
     Route::resource('ratings', RatingController::class)->except(['index', 'show']);
     Route::get('/ratings/{rating}/delete', [RatingController::class, 'delete'])->name('ratings.delete');
+
+//    Route::resource('wordtypes', WordTypeController::class)->except(['index', 'show']);
+//    Route::get('/wordtypes/{wordType}/delete', [WordTypeController::class, 'delete'])->name('wordtypes.delete');
 });
 
 
